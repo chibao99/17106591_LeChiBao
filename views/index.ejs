@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trang chu</title>
+</head>
+<body>
+    <div>
+        <h3>Danh sach san pham</h3>
+        <table border="1">
+            <tr>
+                <th>Ma SP</th>
+                <th>Ten SP</th>
+                <th>So Luong</th>
+                <th>Chon</th>
+            </tr>
+            <%for(let i=0;i< dataSP.length;i++){%>
+                <tr>
+                    <td><%=dataSP[i].maSP%></td>
+                    <td><%=dataSP[i].tenSP%></td>
+                    <td><%=dataSP[i].soluong%></td>
+                    <td>
+                        <form action="/delete" method="POST">
+                            <input type="hidden" value="<%=dataSP[i].maSP%>" name="id" />
+                            <button type="submit"> Delete </button>
+                        </form>
+                    </td>
+                </tr>
+            <%}%>
+        </table>
+    </div>
+</body>
+</html>
